@@ -216,14 +216,6 @@ let package = Package(
             swiftSettings: swiftFeatures + strictConcurrency
         ),
         .testTarget(
-            name: "GeneratedTests",
-            dependencies: [
-                "SwiftLintFramework",
-                "TestHelpers",
-            ],
-            swiftSettings: swiftFeatures + strictConcurrency
-        ),
-        .testTarget(
             name: "IntegrationTests",
             dependencies: [
                 "SwiftLintCore",
