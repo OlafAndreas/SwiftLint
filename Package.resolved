@@ -41,8 +41,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/OlafAndreas/swift-discovery.git",
       "state" : {
-        "revision" : "51ecee117fa4dcfd2e9264f04eda4c481302531b",
-        "version" : "0.3.2"
+        "revision" : "58a31a9e069c34eaf3851ace6b932b3b4f1e21df",
+        "version" : "0.4.0"
       }
     },
     {
