@@ -69,6 +69,7 @@ public macro MakeAcceptableByConfigurationElement() = #externalMacro(
     conformances: SwiftSyntaxRule, SwiftSyntaxCorrectableRule, OptInRule, Rule,
     names: named(makeVisitor(file:)), named(preprocess(file:)), named(makeRewriter(file:))
 )
+@attached(peer, names: prefixed(__swiftlint_rule_))
 public macro SwiftSyntaxRule(foldExpressions: Bool = false,
                              explicitRewriter: Bool = false,
                              correctable: Bool = false,

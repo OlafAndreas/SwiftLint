@@ -3,6 +3,7 @@ import SourceKittenFramework
 import SwiftLintCore
 
 @DisabledWithoutSourceKit
+@Discoverable(RuleTypes.self)
 struct MultilineParametersBracketsRule: OptInRule {
     var configuration = SeverityConfiguration<Self>(.warning)
 

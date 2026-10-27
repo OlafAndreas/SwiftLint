@@ -1,6 +1,7 @@
 import Foundation
 import SourceKittenFramework
 
+@Discoverable(RuleTypes.self)
 struct FileNameNoSpaceRule: OptInRule, SourceKitFreeRule {
     var configuration = FileNameNoSpaceConfiguration()
 

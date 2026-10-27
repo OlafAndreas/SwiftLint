@@ -3,6 +3,7 @@ import SourceKittenFramework
 import SwiftLintCore
 import SwiftSyntax
 
+@Discoverable(RuleTypes.self)
 struct CommaRule: CorrectableRule, SourceKitFreeRule {
     var configuration = SeverityConfiguration<Self>(.warning)
 

@@ -8,8 +8,8 @@ extension SwiftLintDev.Rules {
             commandName: "register",
             abstract: "Register rules as provided by SwiftLint.",
             discussion: """
-                This command registers rules in the list of officially provided built-in rules. It also
-                adds test cases verifying the examples defined in these rules' descriptions.
+                This command adds test cases verifying the examples defined in the built-in rules'
+                descriptions. Rules themselves are found at runtime through their discovery records.
                 """
         )
 
@@ -45,7 +45,6 @@ extension SwiftLintDev.Rules {
                 .compactMap { ($0 as? URL)?.lastPathComponent }
                 .filter { $0.hasSuffix("Rule.swift") }
                 .sorted()
-            try registerInRulesList(rules)
             try registerInTests(rules)
             try registerInTestsBzl(rules)
             try registerInTestReference(adding: newRule)
@@ -113,19 +112,6 @@ private extension SwiftLintDev.Rules.Register {
         testsDirectory.deletingLastPathComponent()
     }
 
-    /// Generate content for BuiltInRules.swift file
-    private func generateBuiltInRulesFileContent(rulesImportList: String) -> String {
-        """
-        // GENERATED FILE. DO NOT EDIT!
-
-        /// The rule list containing all available rules built into SwiftLint.
-        public let builtInRules: [any Rule.Type] = [
-        \(rulesImportList.indent(by: 4)),
-        ]
-
-        """
-    }
-
     /// Generate content for Swift test files
     private func generateSwiftTestFileContent(forTestClasses testClassesString: String) -> String {
         """
@@ -169,18 +155,6 @@ private extension SwiftLintDev.Rules.Register {
             )
 
         """#
-    }
-
-    func registerInRulesList(_ ruleFiles: [String]) throws {
-        let rulesImportString = ruleFiles
-            .map { $0.replacingOccurrences(of: ".swift", with: ".self") }
-            .joined(separator: ",\n")
-        let builtInRulesFile = rulesDirectory.deletingLastPathComponent()
-            .appending(path: "Models", directoryHint: .isDirectory)
-            .appending(path: "BuiltInRules.swift", directoryHint: .notDirectory)
-
-        let fileContent = generateBuiltInRulesFileContent(rulesImportList: rulesImportString)
-        try fileContent.write(to: builtInRulesFile, atomically: true, encoding: .utf8)
     }
 
     func registerInTests(_ ruleFiles: [String]) throws {

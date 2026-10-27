@@ -2,6 +2,7 @@ import Foundation
 import SourceKittenFramework
 import SwiftSyntax
 
+@Discoverable(RuleTypes.self)
 struct OperatorUsageWhitespaceRule: OptInRule, CorrectableRule, SourceKitFreeRule {
     var configuration = OperatorUsageWhitespaceConfiguration()
 

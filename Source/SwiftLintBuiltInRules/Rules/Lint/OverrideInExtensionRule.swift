@@ -1,6 +1,7 @@
 import SwiftLintCore
 import SwiftSyntax
 
+@Discoverable(RuleTypes.self)
 struct OverrideInExtensionRule: OptInRule, SwiftSyntaxRule {
     var configuration = SeverityConfiguration<Self>(.warning)
 

@@ -4,6 +4,7 @@ import SwiftLintCore
 import SwiftSyntax
 
 @DisabledWithoutSourceKit
+@Discoverable(RuleTypes.self)
 struct IndentationWidthRule: OptInRule {
     // MARK: - Subtypes
     private enum Indentation: Equatable {

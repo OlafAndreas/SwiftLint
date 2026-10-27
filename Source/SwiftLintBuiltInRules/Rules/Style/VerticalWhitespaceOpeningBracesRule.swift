@@ -9,6 +9,7 @@ private extension SwiftLintFile {
 }
 
 @DisabledWithoutSourceKit
+@Discoverable(RuleTypes.self)
 struct VerticalWhitespaceOpeningBracesRule: Rule {
     var configuration = SeverityConfiguration<Self>(.warning)
 

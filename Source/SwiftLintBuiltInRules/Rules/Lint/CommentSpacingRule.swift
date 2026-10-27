@@ -3,6 +3,7 @@ import SourceKittenFramework
 import SwiftIDEUtils
 import SwiftLintCore
 
+@Discoverable(RuleTypes.self)
 struct CommentSpacingRule: SourceKitFreeRule, SubstitutionCorrectableRule {
     var configuration = SeverityConfiguration<Self>(.warning)
 

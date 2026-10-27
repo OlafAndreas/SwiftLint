@@ -52,6 +52,7 @@ package struct CustomRulesConfiguration: RuleConfiguration, CacheDescriptionProv
 // MARK: - CustomRules
 
 @DisabledWithoutSourceKit
+@Discoverable(RuleTypes.self)
 package struct CustomRules: Rule, CacheDescriptionProvider, ConditionallySourceKitFree {
     package init() {
         // Nothing to initialize.

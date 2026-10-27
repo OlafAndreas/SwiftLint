@@ -3,6 +3,7 @@ import SourceKittenFramework
 import SwiftLintCore
 
 @DisabledWithoutSourceKit
+@Discoverable(RuleTypes.self)
 struct StatementPositionRule: CorrectableRule {
     var configuration = StatementPositionConfiguration()
 

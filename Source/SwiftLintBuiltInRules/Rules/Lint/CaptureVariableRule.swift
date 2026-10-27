@@ -1,6 +1,7 @@
 import SourceKittenFramework
 import SwiftLintCore
 
+@Discoverable(RuleTypes.self)
 struct CaptureVariableRule: AnalyzerRule, CollectingRule {
     struct Variable: Hashable {
         let usr: String

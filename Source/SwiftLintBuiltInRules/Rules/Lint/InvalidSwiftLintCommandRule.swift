@@ -2,6 +2,7 @@ import Foundation
 import SourceKittenFramework
 import SwiftLintCore
 
+@Discoverable(RuleTypes.self)
 struct InvalidSwiftLintCommandRule: Rule, SourceKitFreeRule {
     var configuration = SeverityConfiguration<Self>(.warning)
 
