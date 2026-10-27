@@ -8,8 +8,8 @@ cc_library(
     name = "SwiftSectionsShim",
     srcs = ["Sources/SwiftSectionsShim/Shim.c"],
     hdrs = ["Sources/SwiftSectionsShim/include/SwiftSectionsShim.h"],
+    aspect_hints = ["@build_bazel_rules_swift//swift:auto_module"],
     includes = ["Sources/SwiftSectionsShim/include"],
-    tags = ["swift_module=SwiftSectionsShim"],
 )
 
 swift_library(
