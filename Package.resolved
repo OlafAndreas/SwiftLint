@@ -41,8 +41,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/OlafAndreas/swift-discovery.git",
       "state" : {
-        "revision" : "58a31a9e069c34eaf3851ace6b932b3b4f1e21df",
-        "version" : "0.4.0"
+        "revision" : "bb942540ae3d0416d779a8af23cdd9fee9b4f6df",
+        "version" : "0.5.0"
       }
     },
     {
@@ -59,8 +59,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/OlafAndreas/swift-sections.git",
       "state" : {
-        "revision" : "29c0bdf1cd2b69660f458873bf75585af9c75e69",
-        "version" : "0.1.0"
+        "revision" : "ac41935aeed32fd60b78774227f8403265502b01",
+        "version" : "0.2.0"
       }
     },
     {

@@ -35,6 +35,18 @@ private let helloRecord = """
             unsafe unsafeBitCast(SwiftLintCore.RuleTypes.self as Any.Type, to: UnsafeRawPointer.self)
         }
     )
+    #elseif os(Windows)
+    @section(".discov$B") @used
+    private let __swiftlint_rule_Hello: (version: UInt32, flags: UInt32, type: @convention(c) () -> UnsafeRawPointer, key: @convention(c) () -> UnsafeRawPointer) = (
+        version: 1,
+        flags: 0,
+        type: {
+            unsafe unsafeBitCast(Hello.self as Any.Type, to: UnsafeRawPointer.self)
+        },
+        key: {
+            unsafe unsafeBitCast(SwiftLintCore.RuleTypes.self as Any.Type, to: UnsafeRawPointer.self)
+        }
+    )
     #endif
     """
 // swiftlint:enable line_length
