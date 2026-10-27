@@ -4,8 +4,6 @@ load(
     "xcodeproj",
 )
 
-load("//Tests:generated_tests.bzl", "GENERATED_TEST_TARGETS")
-
 # Xcode Integration
 
 TEST_TARGETS = [
@@ -16,7 +14,7 @@ TEST_TARGETS = [
     "//Tests:FrameworkTests",
     "//Tests:IntegrationTests",
     "//Tests:MacroTests",
-] + GENERATED_TEST_TARGETS
+]
 
 xcodeproj(
     name = "xcodeproj",

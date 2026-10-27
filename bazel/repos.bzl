@@ -41,6 +41,22 @@ def swiftlint_repos(bzlmod = False):
     )
 
     http_archive(
+        name = "SwiftDiscovery",
+        sha256 = "ccb73a2da6a8d992b1935dff523ad0d308f7a2299e56d458d31a1c72653fb50a",
+        build_file = "@SwiftLint//bazel:SwiftDiscovery.BUILD",
+        strip_prefix = "swift-discovery-0.4.0",
+        url = "https://github.com/OlafAndreas/swift-discovery/archive/refs/tags/0.4.0.tar.gz",
+    )
+
+    http_archive(
+        name = "SwiftSections",
+        sha256 = "3804aa619efc47d1558536f1f8930cd81ae7a4fcc32fd7652250253faaf0d3b6",
+        build_file = "@SwiftLint//bazel:SwiftSections.BUILD",
+        strip_prefix = "swift-sections-0.1.0",
+        url = "https://github.com/OlafAndreas/swift-sections/archive/refs/tags/0.1.0.tar.gz",
+    )
+
+    http_archive(
         name = "SwiftyTextTable",
         sha256 = "b77d403db9f33686caeb2a12986997fb02a0819e029e669c6b9554617c4fd6ae",
         build_file = "@SwiftLint//bazel:SwiftyTextTable.BUILD",
