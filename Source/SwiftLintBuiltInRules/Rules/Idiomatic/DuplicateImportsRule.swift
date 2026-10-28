@@ -2,6 +2,7 @@ import SwiftSyntax
 
 // MARK: - Rule
 
+@Discoverable(RuleTypes.self)
 struct DuplicateImportsRule: SwiftSyntaxCorrectableRule {
     var configuration = SeverityConfiguration<Self>(.warning)
 

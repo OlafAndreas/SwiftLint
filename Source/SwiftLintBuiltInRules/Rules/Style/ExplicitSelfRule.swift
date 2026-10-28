@@ -2,6 +2,7 @@ import Foundation
 import SourceKittenFramework
 import SwiftSyntax
 
+@Discoverable(RuleTypes.self)
 struct ExplicitSelfRule: CorrectableRule, AnalyzerRule {
     var configuration = SeverityConfiguration<Self>(.warning)
 

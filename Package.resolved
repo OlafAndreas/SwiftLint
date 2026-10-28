@@ -37,12 +37,30 @@
       }
     },
     {
+      "identity" : "swift-discovery",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/OlafAndreas/swift-discovery.git",
+      "state" : {
+        "revision" : "e89f1d577e56a6ad7ad84992f9773a4ef7cac41e",
+        "version" : "0.5.1"
+      }
+    },
+    {
       "identity" : "swift-filename-matcher",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ileitch/swift-filename-matcher",
       "state" : {
         "revision" : "eef5ac0b6b3cdc64b3039b037bed2def8a1edaeb",
         "version" : "2.0.1"
+      }
+    },
+    {
+      "identity" : "swift-sections",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/OlafAndreas/swift-sections.git",
+      "state" : {
+        "revision" : "e9490f7689191e9dc165ff5da150478dd109195c",
+        "version" : "0.2.1"
       }
     },
     {

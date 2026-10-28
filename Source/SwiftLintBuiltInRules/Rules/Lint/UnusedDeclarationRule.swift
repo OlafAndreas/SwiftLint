@@ -1,6 +1,7 @@
 import Foundation
 import SourceKittenFramework
 
+@Discoverable(RuleTypes.self)
 struct UnusedDeclarationRule: AnalyzerRule, CollectingRule {
     struct FileUSRs: Hashable {
         var referenced: Set<String>

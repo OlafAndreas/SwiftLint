@@ -3,6 +3,7 @@ import SourceKittenFramework
 import SwiftLintCore
 
 @DisabledWithoutSourceKit
+@Discoverable(RuleTypes.self)
 struct LiteralExpressionEndIndentationRule: Rule, OptInRule {
     var configuration = SeverityConfiguration<Self>(.warning)
 

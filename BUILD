@@ -37,6 +37,7 @@ swift_library(
     visibility = ["//visibility:public"],
     deps = [
         ":SwiftLintBase",
+        "@SwiftDiscovery//:SwiftDiscoveryMacroSupport",
         "@SwiftSyntax//:SwiftCompilerPlugin_opt",
         "@SwiftSyntax//:SwiftSyntaxMacros_opt",
     ],
@@ -49,6 +50,7 @@ swift_compiler_plugin(
     module_name = "SwiftLintCoreMacros",
     deps = [
         ":SwiftLintBase",
+        "@SwiftDiscovery//:SwiftDiscoveryMacroSupport",
         "@SwiftSyntax//:SwiftCompilerPlugin_opt",
         "@SwiftSyntax//:SwiftSyntaxMacros_opt",
     ],
@@ -78,11 +80,12 @@ swift_library(
     plugins = select({
         ":universal_tools_config": [":SwiftLintCoreMacros"],
         "//conditions:default": [":SwiftLintCoreMacros.underlying"],
-    }),
+    }) + ["@SwiftDiscovery//:SwiftDiscoveryMacros"],
     visibility = ["//visibility:public"],
     deps = [
         ":SwiftLintBase",
         ":Yams.wrapper",
+        "@SwiftDiscovery//:SwiftDiscovery",
         "@FilenameMatcher",
         "@SourceKittenFramework",
         "@SwiftSyntax//:SwiftIDEUtils_opt",
@@ -104,6 +107,12 @@ swift_library(
     deps = [
         "@Yams",
     ],
+)
+
+filegroup(
+    name = "BuiltInRuleSources",
+    srcs = glob(["Source/SwiftLintBuiltInRules/Rules/**/*.swift"]),
+    visibility = ["//Tests:__pkg__"],
 )
 
 swift_library(

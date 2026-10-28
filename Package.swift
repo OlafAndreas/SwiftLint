@@ -43,6 +43,7 @@ let package = Package(
         .package(url: "https://github.com/JohnSundell/CollectionConcurrencyKit.git", .upToNextMajor(from: "0.2.0")),
         .package(url: "https://github.com/krzyzanowskim/CryptoSwift.git", .upToNextMajor(from: "1.9.0")),
         .package(url: "https://github.com/ileitch/swift-filename-matcher", .upToNextMinor(from: "2.0.1")),
+        .package(url: "https://github.com/OlafAndreas/swift-discovery.git", exact: "0.5.1"),
     ],
     targets: [
         .executableTarget(
@@ -103,6 +104,7 @@ let package = Package(
         .target(
             name: "SwiftLintCore",
             dependencies: [
+                .product(name: "SwiftDiscovery", package: "swift-discovery"),
                 .product(name: "CryptoSwift", package: "CryptoSwift", condition: .when(platforms: [.linux, .windows])),
                 .target(name: "DyldWarningWorkaround", condition: .when(platforms: [.macOS])),
                 .product(name: "FilenameMatcher", package: "swift-filename-matcher"),
@@ -140,6 +142,7 @@ let package = Package(
         .macro(
             name: "SwiftLintCoreMacros",
             dependencies: [
+                .product(name: "SwiftDiscoveryMacroSupport", package: "swift-discovery"),
                 .product(name: "SwiftSyntaxMacros", package: "swift-syntax"),
                 .product(name: "SwiftCompilerPlugin", package: "swift-syntax"),
                 "SwiftLintBase",
@@ -209,14 +212,6 @@ let package = Package(
             ],
             exclude: [
                 "Resources",
-            ],
-            swiftSettings: swiftFeatures + strictConcurrency
-        ),
-        .testTarget(
-            name: "GeneratedTests",
-            dependencies: [
-                "SwiftLintFramework",
-                "TestHelpers",
             ],
             swiftSettings: swiftFeatures + strictConcurrency
         ),

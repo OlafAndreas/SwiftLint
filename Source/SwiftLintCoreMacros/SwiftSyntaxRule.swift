@@ -1,8 +1,9 @@
+import SwiftDiscoveryMacroSupport
 import SwiftSyntax
 import SwiftSyntaxBuilder
 import SwiftSyntaxMacros
 
-enum SwiftSyntaxRule: ExtensionMacro {
+enum SwiftSyntaxRule: ExtensionMacro, PeerMacro {
     static func expansion(
         of node: AttributeSyntax,
         attachedTo _: some DeclGroupSyntax,
@@ -52,6 +53,19 @@ enum SwiftSyntaxRule: ExtensionMacro {
                 )
             ),
         ].compactMap(\.self)
+    }
+
+    static func expansion(
+        of node: AttributeSyntax,
+        providingPeersOf declaration: some DeclSyntaxProtocol,
+        in context: some MacroExpansionContext
+    ) throws -> [DeclSyntax] {
+        let placement = try DiscoveryRecordSyntax.placement(of: node, on: declaration, in: context)
+        return DiscoveryRecordSyntax.declarations(
+            recording: placement,
+            under: ["SwiftLintCore.RuleTypes"],
+            identifierPrefix: "__swiftlint_rule_"
+        )
     }
 }
 

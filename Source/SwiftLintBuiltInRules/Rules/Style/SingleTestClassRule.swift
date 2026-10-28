@@ -1,6 +1,7 @@
 import SwiftLintCore
 import SwiftSyntax
 
+@Discoverable(RuleTypes.self)
 struct SingleTestClassRule: SourceKitFreeRule, OptInRule {
     var configuration = SingleTestClassConfiguration()
 

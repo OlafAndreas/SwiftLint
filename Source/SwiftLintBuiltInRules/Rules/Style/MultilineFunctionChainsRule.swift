@@ -3,6 +3,7 @@ import SourceKittenFramework
 import SwiftLintCore
 
 @DisabledWithoutSourceKit
+@Discoverable(RuleTypes.self)
 struct MultilineFunctionChainsRule: ASTRule, OptInRule {
     var configuration = SeverityConfiguration<Self>(.warning)
 

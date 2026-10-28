@@ -19,6 +19,7 @@ extension String {
     }
 }
 
+@Discoverable(RuleTypes.self)
 struct TrailingNewlineRule: CorrectableRule, SourceKitFreeRule {
     var configuration = SeverityConfiguration<Self>(.warning)
 

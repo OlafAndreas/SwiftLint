@@ -2,6 +2,7 @@ import SwiftIDEUtils
 import SwiftLintCore
 import SwiftSyntax
 
+@Discoverable(RuleTypes.self)
 struct LocalDocCommentRule: SwiftSyntaxRule, OptInRule {
     var configuration = SeverityConfiguration<Self>(.warning)
 

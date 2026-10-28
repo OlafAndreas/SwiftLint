@@ -1,6 +1,5 @@
 load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library", "swift_test")
 load("//bazel:copts.bzl", "STRICT_COPTS", "TARGETED_COPTS")
-load(":generated_tests.bzl", "generated_tests")
 
 # FileSystemAccessTests
 
@@ -73,7 +72,7 @@ swift_test(
         allow_empty = True,
         # Bazel doesn't support paths with spaces in them
         exclude = ["BuiltInRulesTests/Resources/FileNameNoSpaceRuleFixtures/**"],
-    ),
+    ) + ["//:BuiltInRuleSources"],
     deps = [":BuiltInRulesTests.library"],
     visibility = ["//visibility:public"],
 )
@@ -155,10 +154,6 @@ swift_test(
     deps = [":FrameworkTests.library"],
     visibility = ["//visibility:public"],
 )
-
-# GeneratedTests
-
-generated_tests()
 
 # IntegrationTests
 

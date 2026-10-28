@@ -2,6 +2,7 @@ import Foundation
 import SourceKittenFramework
 import SwiftSyntax
 
+@Discoverable(RuleTypes.self)
 struct FileNameRule: OptInRule, SourceKitFreeRule {
     var configuration = FileNameConfiguration()
 

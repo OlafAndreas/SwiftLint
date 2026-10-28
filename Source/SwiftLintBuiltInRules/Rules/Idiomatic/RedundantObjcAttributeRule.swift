@@ -6,6 +6,7 @@ private let attributeNamesImplyingObjc: Set<String> = [
     "IBAction", "IBOutlet", "IBInspectable", "GKInspectable", "IBDesignable", "NSManaged"
 ]
 
+@Discoverable(RuleTypes.self)
 struct RedundantObjcAttributeRule: SwiftSyntaxRule, SubstitutionCorrectableRule {
     var configuration = SeverityConfiguration<Self>(.warning)
 

@@ -2,6 +2,7 @@ import Foundation
 import SourceKittenFramework
 
 @DisabledWithoutSourceKit
+@Discoverable(RuleTypes.self)
 struct VerticalWhitespaceClosingBracesRule: CorrectableRule, OptInRule {
     var configuration = VerticalWhitespaceClosingBracesConfiguration()
 

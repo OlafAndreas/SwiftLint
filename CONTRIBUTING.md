@@ -77,7 +77,8 @@ open a pull request and watch the CI results carefully. They include all the nec
 New rules should be added in the `Source/SwiftLintBuiltInRules/Rules` directory. We recommend to use the `swiftlint-dev`
 command line tool to generate scaffolds for new rules and their configurations. After having the repository cloned, run
 `swift run swiftlint-dev rules template <RuleName>` to create the new rule at the correct location. Refer to the command's
-help `-h/--help` for customization options. Run `make register` afterwards to register the new rule and its tests.
+help `-h/--help` for customization options. Run `make register` afterwards to record the new rule's default configuration.
+Rules are found through their `@SwiftSyntaxRule` attribute, or `@Discoverable(RuleTypes.self)` for rules without it.
 
 Prefer implementing new rules with the help of SwiftSyntax. Look for the `@SwiftSyntaxRule` attribute for examples and
 use the same on your own rule.
@@ -86,8 +87,8 @@ All new rules or changes to existing rules should be accompanied by unit tests.
 
 Whenever possible, prefer adding tests via the `triggeringExamples` and `nonTriggeringExamples` properties of a rule's
 `description` rather than adding those test cases in unit tests directly. This makes it easier to understand what rules
-do by reading their source, and simplifies adding more test cases over time. With `make register`, you ensure that all
-test cases are automatically checked in unit tests. Moreover, the examples added to a rule will appear in the rule's
+do by reading their source, and simplifies adding more test cases over time. The examples of every built-in rule are
+checked automatically by `BuiltInRuleExamplesTests`. Moreover, the examples added to a rule will appear in the rule's
 rendered documentation accessible from the [Rule Directory](https://realm.github.io/SwiftLint/rule-directory.html).
 
 For debugging purposes, examples can be marked as `focused`. If there are any focused examples found, then only those
