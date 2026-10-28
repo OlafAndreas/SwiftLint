@@ -42,18 +42,18 @@ def swiftlint_repos(bzlmod = False):
 
     http_archive(
         name = "SwiftDiscovery",
-        sha256 = "cc96d662fec039811448c2a59bf74fdc6a9b64532c9c6fe980786219338b226a",
+        sha256 = "301e39779e9797e467db609b7889d458a39e2fc6dd33f2aa0349d7a73543696b",
         build_file = "@SwiftLint//bazel:SwiftDiscovery.BUILD",
-        strip_prefix = "swift-discovery-0.5.0",
-        url = "https://github.com/OlafAndreas/swift-discovery/archive/refs/tags/0.5.0.tar.gz",
+        strip_prefix = "swift-discovery-0.5.1",
+        url = "https://github.com/OlafAndreas/swift-discovery/archive/refs/tags/0.5.1.tar.gz",
     )
 
     http_archive(
         name = "SwiftSections",
-        sha256 = "5e4add4658deb482a87b71884e05b3ff37ab62ffeae2871638aa9b09e93889ac",
+        sha256 = "6e831420f4f1f4d4ff4fc4d799368a8b2c58529d81f1436c8d31d51c4531a3be",
         build_file = "@SwiftLint//bazel:SwiftSections.BUILD",
-        strip_prefix = "swift-sections-0.2.0",
-        url = "https://github.com/OlafAndreas/swift-sections/archive/refs/tags/0.2.0.tar.gz",
+        strip_prefix = "swift-sections-0.2.1",
+        url = "https://github.com/OlafAndreas/swift-sections/archive/refs/tags/0.2.1.tar.gz",
     )
 
     http_archive(

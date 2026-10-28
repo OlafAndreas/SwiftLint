@@ -43,7 +43,7 @@ let package = Package(
         .package(url: "https://github.com/JohnSundell/CollectionConcurrencyKit.git", .upToNextMajor(from: "0.2.0")),
         .package(url: "https://github.com/krzyzanowskim/CryptoSwift.git", .upToNextMajor(from: "1.9.0")),
         .package(url: "https://github.com/ileitch/swift-filename-matcher", .upToNextMinor(from: "2.0.1")),
-        .package(url: "https://github.com/OlafAndreas/swift-discovery.git", exact: "0.5.0"),
+        .package(url: "https://github.com/OlafAndreas/swift-discovery.git", exact: "0.5.1"),
     ],
     targets: [
         .executableTarget(
